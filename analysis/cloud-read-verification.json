@@ -1,0 +1,32 @@
+{
+  "verified_at_utc": "2026-10-15T20:55:49Z",
+  "device_count": 3,
+  "physical_commands_sent": 0,
+  "transport": "app cloud HTTPS reads",
+  "states": [
+    {
+      "status": true,
+      "power": true,
+      "firmwareVersion": "1.4.0",
+      "sleep": false,
+      "led": false,
+      "speed": 3
+    },
+    {
+      "speed": 6,
+      "sleep": false,
+      "status": false,
+      "power": true,
+      "led": false,
+      "firmwareVersion": "2.2.0"
+    },
+    {
+      "sleep": false,
+      "status": false,
+      "led": false,
+      "firmwareVersion": "2.2.0",
+      "speed": 6,
+      "power": true
+    }
+  ]
+}

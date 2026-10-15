@@ -1,0 +1,24 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Sign in to Atomberg",
+        "description": "Use your Atomberg Home email and password. Control uses the app's cloud connection only. This version supports fans with firmware newer than 1.0.24. Social sign-in and MFA challenges are not supported. Passwords are used only during sign-in; session tokens are saved.",
+        "data": {
+          "username": "Email",
+          "password": "Password"
+        }
+      }
+    },
+    "error": {
+      "invalid_auth": "Sign-in failed. Check your credentials and complete verification in the Atomberg app.",
+      "cannot_connect": "Could not connect to Atomberg.",
+      "no_devices": "No supported Wi-Fi fans were found in this account."
+    },
+    "abort": {
+      "already_configured": "This account is already configured.",
+      "reauth_successful": "Signed in again successfully.",
+      "wrong_account": "Sign in with the account already configured for this integration."
+    }
+  }
+}

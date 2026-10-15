@@ -1,0 +1,24 @@
+{
+  "tool": "Blutter",
+  "commit": "4a60ac648bf448c5a7596437243bcd0b9376fdf0",
+  "dart": "3.12.2",
+  "libapp_sha256": "1ee6db6b66afa3a829a5b838e02a23ae235d842adb6a2c3b67b51a8b69ac9adc",
+  "limitations": [
+    "Static assembly annotations, not original Dart source or runtime observation",
+    "Analysis reported optional named parameter error at 0x99fad0; output coverage is partial"
+  ],
+  "files": {
+    "UDP/UDPremote.dart": "1f3d337fba9b096445841c9fe7e6c58f0a89481e475bb406a6d99e330975cfd6",
+    "BLE/PairAndConnect.dart": "4a020825a43edf23d46ec53224741e64702d8ba33530a5956abb32973142b083",
+    "MQTT/MQTTremote.dart": "a8a422a653376d5bbad1879249258da8955435ca5f24cf8f9e27bff886a86496",
+    "MQTT/MQTTinitialise.dart": "47f1736eaaf74802f8b653729910c00a0447aed74eccd605c787704324e6b915",
+    "common/delegates/websocket_delegate.dart": "064ef9a44798b7cd2f45e7b87f67d2a4b267a7c9b95fad6ff2d98d4623981780",
+    "common/delegates/mqtt_message_helper.dart": "d5d4e8b683b930ae98d51455c2f337801424dd2fff50f25585df781caf0adfc6",
+    "screens/Remote/RemoteLogic.dart": "ec2564357d40b30f5e9dd81344960f1e1db80ea1e839fa0eba6dddcc7a850c11",
+    "API/AppOpen.dart": "5b54bf67deaf72240f03483f3b7013cd44a8f40187274d013b1ffc32c264f1a2",
+    "Firebase/FirebaseFunctions.dart": "b68e720d83321320e8d1b3a3faf536e3bc3dbd4ae701211b12e0a694b2a504f3",
+    "config/amplify_config.dart": "53f5ed7588b788cc6638243082c1e468911858ad6efa27ca9522e55e72a01a02",
+    "common/services/auth_service.dart": "b7bb3e1a96f3bc1d965835487a75f6828c5d1363e608e8f2fdae4fb584693e60",
+    "data/DataProvider.dart": "6904657a99bd653793a253c93fd620fca1c50ceef93fa753d8978a9dd5340f51"
+  }
+}

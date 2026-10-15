@@ -1,0 +1,344 @@
+{
+  "evidence_id": "ev_0141ecddc5b65a8ac3d035674e316a6e8543a740b7c8496bda544b785fc030e4",
+  "subject": {
+    "name": "Atomberg+Home_7.7.2_APKPure.xapk",
+    "digest": {
+      "sha256": "9bdedfb8b7ee1156c74eca89d9e1300d7e674f6982dfe6162d61636a62632d48"
+    },
+    "format": "zip",
+    "architecture": null,
+    "local_path": "/Users/vinoth/Downloads/Atomberg+Home_7.7.2_APKPure.xapk"
+  },
+  "provider": {
+    "id": "rea-artifact-graph",
+    "name": "REA safe artifact graph provider",
+    "version": "1"
+  },
+  "analysis_profile": null,
+  "predicate_type": "rea.analysis",
+  "operation": "inspect_artifact",
+  "parameters": {
+    "integrity_policy": "fail"
+  },
+  "raw_result": null,
+  "normalized_result": {
+    "inspection_id": "ai_5895d5012d82308ba8c8bf380b202b8ab394b97580d927ab5ab2b8fd1100b8ca",
+    "subject": {
+      "manifest_id": "agm_f3d98daa2eaaf2c7160f1c6840eebbf5b9fada9ed4e06f4bec0cb0c872fb77cd",
+      "root_artifact_id": "art_a4b2a05f4670ee6c0406c186591f8caa5ff60cfd2a3af83f46fa634325aa5a97",
+      "root_sha256": "9bdedfb8b7ee1156c74eca89d9e1300d7e674f6982dfe6162d61636a62632d48",
+      "root_format": "zip"
+    },
+    "substeps": [
+      {
+        "substep_id": "ais_f842cac9885a3d70cba6c341c0ea2395e1789f50fe82edf230978c9d33f01a3b",
+        "operation": "inventory_artifact",
+        "status": "completed",
+        "evidence_id": "ev_83afb5292d2ff9ee56e93d7e0fe1c345663b0b845ae741c5b12fde96b7d03892",
+        "evidence": {
+          "evidence_id": "ev_83afb5292d2ff9ee56e93d7e0fe1c345663b0b845ae741c5b12fde96b7d03892",
+          "subject": {
+            "name": "Atomberg+Home_7.7.2_APKPure.xapk",
+            "digest": {
+              "sha256": "9bdedfb8b7ee1156c74eca89d9e1300d7e674f6982dfe6162d61636a62632d48"
+            },
+            "format": "zip",
+            "architecture": null,
+            "local_path": "/Users/vinoth/Downloads/Atomberg+Home_7.7.2_APKPure.xapk"
+          },
+          "provider": {
+            "id": "rea-artifact-graph",
+            "name": "REA safe artifact graph provider",
+            "version": "1"
+          },
+          "analysis_profile": null,
+          "predicate_type": "rea.analysis",
+          "operation": "inventory_artifact",
+          "parameters": {
+            "integrity_policy": "fail"
+          },
+          "raw_result": null,
+          "normalized_result": {
+            "manifest": {
+              "manifest_id": "agm_f3d98daa2eaaf2c7160f1c6840eebbf5b9fada9ed4e06f4bec0cb0c872fb77cd",
+              "root_artifact_id": "art_a4b2a05f4670ee6c0406c186591f8caa5ff60cfd2a3af83f46fa634325aa5a97",
+              "root_sha256": "9bdedfb8b7ee1156c74eca89d9e1300d7e674f6982dfe6162d61636a62632d48",
+              "root_format": "zip",
+              "graph_sha256": "610e8a23abcbc01dc1c74c133dc8903e39d6ab70adad4864fd41b49631a2fe40",
+              "node_count": 6,
+              "occurrence_count": 6,
+              "edge_count": 5
+            },
+            "nodes": [
+              {
+                "artifact_id": "art_86954926bc64f8f4bccd6523d5fc10d6336fc32f8e45157b95da33eb6f069b25",
+                "format": "zip",
+                "sha256": "8f3545128be35972b8697fe4b86b9d3ff8addf654335f87779b9c288fb268611",
+                "size": 35377621,
+                "media_type": null,
+                "architecture": null,
+                "content_state": "embedded",
+                "limitations": []
+              },
+              {
+                "artifact_id": "art_8f30e13633badf48210347c8094224ad29e946b32a8d3daedca2400df0b3b6c1",
+                "format": "file",
+                "sha256": "a550736c2fa9de360be89eab504131148f9d29f219bc70c077a64b46857f7bfb",
+                "size": 2719,
+                "media_type": null,
+                "architecture": null,
+                "content_state": "embedded",
+                "limitations": []
+              },
+              {
+                "artifact_id": "art_a4b2a05f4670ee6c0406c186591f8caa5ff60cfd2a3af83f46fa634325aa5a97",
+                "format": "zip",
+                "sha256": "9bdedfb8b7ee1156c74eca89d9e1300d7e674f6982dfe6162d61636a62632d48",
+                "size": 75430554,
+                "media_type": null,
+                "architecture": null,
+                "content_state": "materialized",
+                "limitations": []
+              },
+              {
+                "artifact_id": "art_c206a9e13a1b6054814c735296e6de6429e2dc35e3a583ca9251a437c904fd90",
+                "format": "zip",
+                "sha256": "0a75817fbd604de0384f5008abbae007e86ca5307b3784b2eb8cce8b14f2fcdd",
+                "size": 61849,
+                "media_type": null,
+                "architecture": null,
+                "content_state": "embedded",
+                "limitations": []
+              },
+              {
+                "artifact_id": "art_f18d1b89051bf6dfd88d4f6723b5633298b0c160731f653ec5d97ac96420c1fc",
+                "format": "zip",
+                "sha256": "fc80aae6e7c1c514b71847b2d87048147cf0639fbd872bf1fa70be62821b8c36",
+                "size": 39916336,
+                "media_type": null,
+                "architecture": null,
+                "content_state": "embedded",
+                "limitations": []
+              },
+              {
+                "artifact_id": "art_f22cd5f5d49b576e5dbeed686c1c05c2bd4017add737734a364c701faff6b815",
+                "format": "zip",
+                "sha256": "0dd9bb2b8f4f972bb143e94a9c7b569c8c4874bb44e451025f96eb46ffcaf4d2",
+                "size": 71324,
+                "media_type": null,
+                "architecture": null,
+                "content_state": "embedded",
+                "limitations": []
+              }
+            ],
+            "occurrences": [
+              {
+                "occurrence_id": "occ_2a4dd94dd3c2f2056730a4640d4d9c93fdca4d74bb22c6a47f840a324c23deef",
+                "artifact_id": "art_a4b2a05f4670ee6c0406c186591f8caa5ff60cfd2a3af83f46fa634325aa5a97",
+                "parent_occurrence_id": null,
+                "logical_path": ".",
+                "entry_kind": "file",
+                "artifact_kind": "container",
+                "artifact_format": "zip",
+                "declared_size": 75430554,
+                "compressed_size": null,
+                "executable": false,
+                "encrypted": false,
+                "hash_status": "verified",
+                "source_location": null,
+                "limitations": []
+              },
+              {
+                "occurrence_id": "occ_88622ee8d4768cd281607b25013da76c387d43ce112e412ab78b8925b25d0f42",
+                "artifact_id": "art_86954926bc64f8f4bccd6523d5fc10d6336fc32f8e45157b95da33eb6f069b25",
+                "parent_occurrence_id": "occ_2a4dd94dd3c2f2056730a4640d4d9c93fdca4d74bb22c6a47f840a324c23deef",
+                "logical_path": "com.atomberg.app.apk",
+                "entry_kind": "file",
+                "artifact_kind": "container",
+                "artifact_format": "apk",
+                "declared_size": 35377621,
+                "compressed_size": 35377621,
+                "executable": false,
+                "encrypted": false,
+                "hash_status": "verified",
+                "source_location": null,
+                "limitations": []
+              },
+              {
+                "occurrence_id": "occ_be06c230a7ebcf8291922a3c053894e50c6d6dae27844fd8856e40caf1603f60",
+                "artifact_id": "art_f18d1b89051bf6dfd88d4f6723b5633298b0c160731f653ec5d97ac96420c1fc",
+                "parent_occurrence_id": "occ_2a4dd94dd3c2f2056730a4640d4d9c93fdca4d74bb22c6a47f840a324c23deef",
+                "logical_path": "config.armeabi_v7a.apk",
+                "entry_kind": "file",
+                "artifact_kind": "container",
+                "artifact_format": "apk",
+                "declared_size": 39916336,
+                "compressed_size": 39916336,
+                "executable": false,
+                "encrypted": false,
+                "hash_status": "verified",
+                "source_location": null,
+                "limitations": []
+              },
+              {
+                "occurrence_id": "occ_c79555793621adee762d2b0bc0c460959c5ea4c0606429f2fe663a9b62b3bd2f",
+                "artifact_id": "art_c206a9e13a1b6054814c735296e6de6429e2dc35e3a583ca9251a437c904fd90",
+                "parent_occurrence_id": "occ_2a4dd94dd3c2f2056730a4640d4d9c93fdca4d74bb22c6a47f840a324c23deef",
+                "logical_path": "config.en.apk",
+                "entry_kind": "file",
+                "artifact_kind": "container",
+                "artifact_format": "apk",
+                "declared_size": 61849,
+                "compressed_size": 61849,
+                "executable": false,
+                "encrypted": false,
+                "hash_status": "verified",
+                "source_location": null,
+                "limitations": []
+              },
+              {
+                "occurrence_id": "occ_6805b2f2d28c94fd757e3ec5d11fa2bd4ca76f6c525d8997afae42d5a1ce3056",
+                "artifact_id": "art_f22cd5f5d49b576e5dbeed686c1c05c2bd4017add737734a364c701faff6b815",
+                "parent_occurrence_id": "occ_2a4dd94dd3c2f2056730a4640d4d9c93fdca4d74bb22c6a47f840a324c23deef",
+                "logical_path": "config.xhdpi.apk",
+                "entry_kind": "file",
+                "artifact_kind": "container",
+                "artifact_format": "apk",
+                "declared_size": 71324,
+                "compressed_size": 71324,
+                "executable": false,
+                "encrypted": false,
+                "hash_status": "verified",
+                "source_location": null,
+                "limitations": []
+              },
+              {
+                "occurrence_id": "occ_12f2e669f3dff1e92597105f6befe170af8a2c58e41586ddb70d9dbab427712b",
+                "artifact_id": "art_8f30e13633badf48210347c8094224ad29e946b32a8d3daedca2400df0b3b6c1",
+                "parent_occurrence_id": "occ_2a4dd94dd3c2f2056730a4640d4d9c93fdca4d74bb22c6a47f840a324c23deef",
+                "logical_path": "manifest.json",
+                "entry_kind": "file",
+                "artifact_kind": "resource",
+                "artifact_format": "file",
+                "declared_size": 2719,
+                "compressed_size": 2719,
+                "executable": false,
+                "encrypted": false,
+                "hash_status": "verified",
+                "source_location": null,
+                "limitations": []
+              }
+            ],
+            "edges": [
+              {
+                "edge_id": "edge_07d401a2d71a947fd424bc16f9fdc1aa25c9e0c213eee1a2cd436b05f4dcadd2",
+                "ordinal": 0,
+                "parent_artifact_id": "art_a4b2a05f4670ee6c0406c186591f8caa5ff60cfd2a3af83f46fa634325aa5a97",
+                "relation": "contains",
+                "occurrence_id": "occ_c79555793621adee762d2b0bc0c460959c5ea4c0606429f2fe663a9b62b3bd2f",
+                "producer": null
+              },
+              {
+                "edge_id": "edge_1b5f72b5f143e97183a5a084d1847ac777f6ae5a2d492b54a07cccdeb9f45155",
+                "ordinal": 1,
+                "parent_artifact_id": "art_a4b2a05f4670ee6c0406c186591f8caa5ff60cfd2a3af83f46fa634325aa5a97",
+                "relation": "contains",
+                "occurrence_id": "occ_88622ee8d4768cd281607b25013da76c387d43ce112e412ab78b8925b25d0f42",
+                "producer": null
+              },
+              {
+                "edge_id": "edge_3a6449c8459fbce1189b25c541422b792de1546b9f31d79568a54c0906af1b6b",
+                "ordinal": 2,
+                "parent_artifact_id": "art_a4b2a05f4670ee6c0406c186591f8caa5ff60cfd2a3af83f46fa634325aa5a97",
+                "relation": "contains",
+                "occurrence_id": "occ_be06c230a7ebcf8291922a3c053894e50c6d6dae27844fd8856e40caf1603f60",
+                "producer": null
+              },
+              {
+                "edge_id": "edge_cd4c81bda9d98a995711d581e36f49ea0017eb6a464a12cec0d9c5f158a7ff96",
+                "ordinal": 3,
+                "parent_artifact_id": "art_a4b2a05f4670ee6c0406c186591f8caa5ff60cfd2a3af83f46fa634325aa5a97",
+                "relation": "contains",
+                "occurrence_id": "occ_12f2e669f3dff1e92597105f6befe170af8a2c58e41586ddb70d9dbab427712b",
+                "producer": null
+              },
+              {
+                "edge_id": "edge_d50fc394ee8669d17dc3c6fb53d3b40d8b05f6da2f9a48e0b1cc9ee5ace2cb6e",
+                "ordinal": 4,
+                "parent_artifact_id": "art_a4b2a05f4670ee6c0406c186591f8caa5ff60cfd2a3af83f46fa634325aa5a97",
+                "relation": "contains",
+                "occurrence_id": "occ_6805b2f2d28c94fd757e3ec5d11fa2bd4ca76f6c525d8997afae42d5a1ce3056",
+                "producer": null
+              }
+            ],
+            "provenance": [],
+            "integrity_contradictions": [],
+            "limitations": [
+              "ZIP inventory lists central-directory entries only. Bytes after the central directory, including an APK Signing Block or a ZIP comment, are not occurrences."
+            ]
+          },
+          "confidence": "observed",
+          "authority": "shipped-artifact",
+          "environment": null,
+          "limitations": [
+            "ZIP inventory lists central-directory entries only. Bytes after the central directory, including an APK Signing Block or a ZIP comment, are not occurrences."
+          ],
+          "locations": [],
+          "evidence_links": []
+        }
+      }
+    ],
+    "observations": [
+      {
+        "observation_id": "aio_4acfd60a8046f9e3fe109d71f13e58891c11b08f03ea950fbc4216d6ca6d2c78",
+        "kind": "root-manifest",
+        "subject": "art_a4b2a05f4670ee6c0406c186591f8caa5ff60cfd2a3af83f46fa634325aa5a97",
+        "value": {
+          "manifest_id": "agm_f3d98daa2eaaf2c7160f1c6840eebbf5b9fada9ed4e06f4bec0cb0c872fb77cd",
+          "root_artifact_id": "art_a4b2a05f4670ee6c0406c186591f8caa5ff60cfd2a3af83f46fa634325aa5a97",
+          "root_sha256": "9bdedfb8b7ee1156c74eca89d9e1300d7e674f6982dfe6162d61636a62632d48",
+          "root_format": "zip",
+          "graph_sha256": "610e8a23abcbc01dc1c74c133dc8903e39d6ab70adad4864fd41b49631a2fe40",
+          "node_count": 6,
+          "occurrence_count": 6,
+          "edge_count": 5
+        },
+        "evidence_id": "ev_83afb5292d2ff9ee56e93d7e0fe1c345663b0b845ae741c5b12fde96b7d03892"
+      }
+    ],
+    "hypotheses": [],
+    "contradictions": [],
+    "unexplored_branches": [],
+    "next_probes": [],
+    "coverage": {
+      "status": "complete-within-substeps",
+      "substeps_completed": 1,
+      "observations_retained": 1,
+      "observations_omitted": 0,
+      "hypotheses_retained": 0,
+      "hypotheses_omitted": 0,
+      "unexplored_branches_retained": 0,
+      "unexplored_branches_omitted": 0,
+      "next_probes_retained": 0,
+      "next_probes_omitted": 0
+    },
+    "evidence_links": [
+      "ev_83afb5292d2ff9ee56e93d7e0fe1c345663b0b845ae741c5b12fde96b7d03892"
+    ],
+    "limitations": [
+      "Inspection derives bounded static hypotheses and next probes; it does not execute the artifact or claim format-specific semantics.",
+      "ZIP inventory lists central-directory entries only. Bytes after the central directory, including an APK Signing Block or a ZIP comment, are not occurrences."
+    ]
+  },
+  "confidence": "observed",
+  "authority": "shipped-artifact",
+  "environment": null,
+  "limitations": [
+    "Inspection derives bounded static hypotheses and next probes; it does not execute the artifact or claim format-specific semantics.",
+    "ZIP inventory lists central-directory entries only. Bytes after the central directory, including an APK Signing Block or a ZIP comment, are not occurrences."
+  ],
+  "locations": [],
+  "evidence_links": [
+    "ev_83afb5292d2ff9ee56e93d7e0fe1c345663b0b845ae741c5b12fde96b7d03892"
+  ]
+}

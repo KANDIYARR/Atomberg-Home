@@ -1,0 +1,12 @@
+analysis/*.apk
+analysis/lib/
+analysis/libapp.strings.txt
+__pycache__/
+.pytest_cache/
+.venv/
+dist/
+analysis/tools/
+analysis/emulator/
+analysis/blutter-output/
+analysis/blutter-build.log
+analysis/private/

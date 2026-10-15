@@ -1,0 +1,11 @@
+{
+  "domain": "atomberg_cloud",
+  "name": "Atomberg Cloud",
+  "version": "0.2.0",
+  "codeowners": [],
+  "config_flow": true,
+  "documentation": "https://atomberg.com/",
+  "integration_type": "hub",
+  "iot_class": "cloud_polling",
+  "requirements": ["pycognito==2024.5.1"]
+}
