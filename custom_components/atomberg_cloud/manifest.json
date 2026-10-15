@@ -2,10 +2,15 @@
   "domain": "atomberg_cloud",
   "name": "Atomberg Cloud",
   "version": "0.2.0",
-  "codeowners": [],
+  "codeowners": [
+    "@KANDIYARR"
+  ],
   "config_flow": true,
-  "documentation": "https://atomberg.com/",
+  "documentation": "https://github.com/KANDIYARR/Atomberg-Home",
   "integration_type": "hub",
   "iot_class": "cloud_polling",
-  "requirements": ["pycognito==2024.5.1"]
+  "requirements": [
+    "pycognito==2024.5.1"
+  ],
+  "issue_tracker": "https://github.com/KANDIYARR/Atomberg-Home/issues"
 }

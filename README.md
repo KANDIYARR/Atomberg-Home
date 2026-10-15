@@ -4,7 +4,22 @@ Custom integration using the Atomberg Home app's cloud communication, recovered
 from version 7.7.2. Provides fan power, six speeds, LED on/off and a sleep switch.
 State refreshes every 60 seconds. No LAN discovery or local-device fallback is used.
 
-## Install
+## Install through HACS
+
+HACS requires a public GitHub repository. These steps work once this repository
+is public; private repositories are not supported by the standard HACS setup.
+
+1. Open **HACS → ⋮ → Custom repositories**.
+2. Enter `https://github.com/KANDIYARR/Atomberg-Home`.
+3. Choose **Integration** as the type and select **Add**.
+4. Find **Atomberg Home** in HACS and download it.
+5. Restart Home Assistant.
+6. Open **Settings → Devices & services → Add integration → Atomberg Cloud**
+   and sign in with your Atomberg Home email and password.
+
+See the [HACS custom repository guide](https://www.hacs.dev/docs/faq/custom_repositories/).
+
+## Manual install
 
 1. Download or clone this repository (or extract the provided cloud release ZIP).
 2. Copy `custom_components/atomberg_cloud` into your Home Assistant configuration's
