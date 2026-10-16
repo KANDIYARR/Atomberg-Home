@@ -70,3 +70,8 @@ python -m unittest discover -s tests -p test_cloud.py -v
 The cloud tests use synthetic data and mocked network transports. The separate
 `atomberg_local` source and its tests are historical prototypes, excluded from
 the cloud package. Local credentials and private verification files are also excluded.
+
+## License
+
+Original integration code is [MIT licensed](LICENSE), copyright 2026 Vinoth Sakthivel.
+Brand images and recovered app material are excluded; see [NOTICE.md](NOTICE.md).
