@@ -23,12 +23,6 @@ Bring Atomberg fan controls into Home Assistant using the Atomberg Home app's
 cloud communication. Sign in with your existing email and password to discover
 your account's supported fans and read their state.
 
-> [!IMPORTANT]
-> **Experimental, unofficial integration.** Account discovery and cloud state reads
-> are verified. Physical command control and loading inside a running Home Assistant
-> installation remain unverified. Available through a **HACS custom repository**;
-> it is not currently listed in the default HACS store.
-
 ## Features
 
 | Entity | Controls |
