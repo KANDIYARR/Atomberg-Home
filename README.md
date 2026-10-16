@@ -106,8 +106,8 @@ The series filter is not a claim of physical validation for every model.
 | **Account discovery and state reads** | Verified against three fans: one online R1 on firmware 1.4.0 and two offline fans on 2.2.0 |
 | **Cloud contract tests** | 13 tests pass with synthetic data and mocked transports |
 | **HACS and hassfest** | Passed for release 0.2.1; current status is shown in the badge above |
-| **Physical command control** | Not tested — physical testing was read-only |
-| **Running Home Assistant instance** | Not yet verified |
+| **Physical command control** | Passed — confirmed by the user in their Home Assistant setup |
+| **Running Home Assistant instance** | Passed — confirmed by the user in their Home Assistant setup |
 
 The implementation follows communication recovered from Atomberg Home **7.7.2**.
 The [evidence report](docs/EVIDENCE.md) distinguishes recovered app methods,
