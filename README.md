@@ -109,10 +109,6 @@ The series filter is not a claim of physical validation for every model.
 | **Physical command control** | Passed — confirmed by the user in their Home Assistant setup |
 | **Running Home Assistant instance** | Passed — confirmed by the user in their Home Assistant setup |
 
-The implementation follows communication recovered from Atomberg Home **7.7.2**.
-The [evidence report](docs/EVIDENCE.md) distinguishes recovered app methods,
-REA evidence, live observations, and integration design choices.
-
 ## Everyday use
 
 - Allow up to **60 seconds** for the next scheduled state refresh.
