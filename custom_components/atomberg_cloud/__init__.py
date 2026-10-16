@@ -14,7 +14,7 @@ PLATFORMS = [Platform.FAN, Platform.LIGHT, Platform.SWITCH]
 
 class CloudCoordinator(DataUpdateCoordinator):
     def __init__(self, hass, entry, client):
-        super().__init__(hass, logging.getLogger(__name__), name="Atomberg Cloud",
+        super().__init__(hass, logging.getLogger(__name__), name="Atomberg Home",
                          config_entry=entry, update_interval=timedelta(seconds=60))
         self.client = client
 

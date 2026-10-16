@@ -1,4 +1,12 @@
-# Atomberg Cloud for Home Assistant
+# Atomberg Home for Home Assistant
+
+<img src="https://raw.githubusercontent.com/KANDIYARR/Atomberg-Home/main/custom_components/atomberg_cloud/brand/icon@2x.png" alt="Atomberg Home" width="128">
+
+**Author:** Vinoth Sakthivel
+
+**Email:** [vinoth@kandiyar.com](mailto:vinoth@kandiyar.com)
+
+**GitHub maintainer:** [@KANDIYARR](https://github.com/KANDIYARR)
 
 Custom integration using the Atomberg Home app's cloud communication, recovered
 from version 7.7.2. Provides fan power, six speeds, LED on/off and a sleep switch.
@@ -6,15 +14,15 @@ State refreshes every 60 seconds. No LAN discovery or local-device fallback is u
 
 ## Install through HACS
 
-HACS requires a public GitHub repository. These steps work once this repository
-is public; private repositories are not supported by the standard HACS setup.
+This public repository can be installed as a HACS custom repository. Inclusion
+in the default HACS store requires a separate maintainer review.
 
 1. Open **HACS → ⋮ → Custom repositories**.
 2. Enter `https://github.com/KANDIYARR/Atomberg-Home`.
 3. Choose **Integration** as the type and select **Add**.
 4. Find **Atomberg Home** in HACS and download it.
 5. Restart Home Assistant.
-6. Open **Settings → Devices & services → Add integration → Atomberg Cloud**
+6. Open **Settings → Devices & services → Add integration → Atomberg Home**
    and sign in with your Atomberg Home email and password.
 
 See the [HACS custom repository guide](https://www.hacs.dev/docs/faq/custom_repositories/).
@@ -25,7 +33,7 @@ See the [HACS custom repository guide](https://www.hacs.dev/docs/faq/custom_repo
 2. Copy `custom_components/atomberg_cloud` into your Home Assistant configuration's
    `custom_components` directory.
 3. Restart Home Assistant.
-4. Open Settings → Devices & services → Add integration → **Atomberg Cloud**.
+4. Open Settings → Devices & services → Add integration → **Atomberg Home**.
 5. Sign in with the email and password used in Atomberg Home.
 
 Use a current Home Assistant release. The integration stores session tokens in

@@ -1,7 +1,6 @@
 {
   "domain": "atomberg_cloud",
-  "name": "Atomberg Cloud",
-  "version": "0.2.0",
+  "name": "Atomberg Home",
   "codeowners": [
     "@KANDIYARR"
   ],
@@ -9,8 +8,9 @@
   "documentation": "https://github.com/KANDIYARR/Atomberg-Home",
   "integration_type": "hub",
   "iot_class": "cloud_polling",
+  "issue_tracker": "https://github.com/KANDIYARR/Atomberg-Home/issues",
   "requirements": [
     "pycognito==2024.5.1"
   ],
-  "issue_tracker": "https://github.com/KANDIYARR/Atomberg-Home/issues"
+  "version": "0.2.1"
 }
