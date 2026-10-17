@@ -13,7 +13,7 @@ Cloud integration · Fan controls · HACS custom repository
 [![HACS custom repository](https://img.shields.io/badge/HACS-Custom_repository-41BDF5)](#installation)
 [![License: MIT](https://img.shields.io/badge/Code_license-MIT-222222)](LICENSE)
 
-[Install](#installation) · [Features](#features) · [Compatibility](#compatibility) · [Evidence](docs/EVIDENCE.md) · [Report an issue](https://github.com/KANDIYARR/Atomberg-Home/issues)
+[Install](#installation) · [Features](#features) · [Compatibility](#compatibility) · [Report an issue](https://github.com/KANDIYARR/Atomberg-Home/issues)
 
 </div>
 

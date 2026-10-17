@@ -1,4 +1,4 @@
-"""Cloud command validation and fan state. See docs/EVIDENCE.md."""
+"""Cloud command validation and fan state."""
 
 from dataclasses import dataclass
 import json
