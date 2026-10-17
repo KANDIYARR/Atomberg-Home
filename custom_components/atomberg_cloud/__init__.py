@@ -29,7 +29,7 @@ class CloudCoordinator(DataUpdateCoordinator):
 
 async def async_setup_entry(hass, entry):
     def save_tokens(tokens):
-        hass.config_entries.async_update_entry(entry, data=tokens)
+        hass.config_entries.async_update_entry(entry, data={**entry.data, **tokens})
     client = AtombergCloud(async_get_clientsession(hass), entry.data, save_tokens)
     try:
         await client.discover()

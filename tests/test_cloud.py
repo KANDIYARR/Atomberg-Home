@@ -4,7 +4,7 @@ from pathlib import Path
 import sys
 import types
 import unittest
-from unittest.mock import AsyncMock
+from unittest.mock import AsyncMock, Mock, patch
 
 package = types.ModuleType('atomberg_cloud_test')
 package.__path__ = [str(Path(__file__).resolve().parents[1] / 'custom_components/atomberg_cloud')]
@@ -131,6 +131,59 @@ class TransportTests(unittest.IsolatedAsyncioTestCase):
         self.client._request = AsyncMock(return_value={'fields': {'speed': {'integerValue': 'bad'}}})
         with self.assertRaises(c.CloudError):
             await self.client.read_state('test-fan')
+
+
+class SessionRecoveryTests(unittest.IsolatedAsyncioTestCase):
+    def setUp(self):
+        self.tokens = dict(username="test@example.invalid", access_token="access", refresh_token="refresh", id_token="id")
+        self.expired = c.ClientError({"Error": {"Code": "NotAuthorizedException"}}, "Refresh")
+
+    async def test_restart_reuses_tokens_without_password(self):
+        user = Mock(**self.tokens)
+        saved = Mock()
+        client = c.AtombergCloud(None, self.tokens, saved)
+        with patch.object(c, "Cognito", return_value=user) as factory, patch.object(c, "sign_in") as login:
+            self.assertEqual(await client._access_token(), "access")
+            factory.assert_called_once_with(c.POOL, c.CLIENT, **self.tokens)
+            login.assert_not_called()
+            saved.assert_not_called()
+
+    async def test_expired_refresh_recovers_with_opt_in_password(self):
+        data = {**self.tokens, "remember_password": True, "password": "synthetic-password"}
+        updated = {**self.tokens, "access_token": "new-access"}
+        user = Mock(); user.check_token.side_effect = self.expired
+        saved = Mock(); client = c.AtombergCloud(None, data, saved)
+        with patch.object(c, "Cognito", return_value=user) as factory, patch.object(c, "sign_in", return_value=updated) as login:
+            self.assertEqual(await client._access_token(), "new-access")
+            login.assert_called_once_with(self.tokens["username"], "synthetic-password")
+            self.assertNotIn("password", factory.call_args.kwargs)
+            saved.assert_called_once_with(updated)
+
+    async def test_disabled_does_not_use_stale_password(self):
+        client = c.AtombergCloud(None, {**self.tokens, "remember_password": False, "password": "old"})
+        user = Mock(); user.check_token.side_effect = self.expired
+        with patch.object(c, "Cognito", return_value=user), patch.object(c, "sign_in") as login:
+            with self.assertRaises(c.AuthError):
+                await client._access_token()
+            login.assert_not_called()
+
+    async def test_rejected_password_does_not_loop(self):
+        client = c.AtombergCloud(None, {**self.tokens, "remember_password": True, "password": "wrong"})
+        user = Mock(); user.check_token.side_effect = self.expired
+        with patch.object(c, "Cognito", return_value=user), patch.object(c, "sign_in", side_effect=c.AuthError("Rejected")) as login:
+            for _ in range(2):
+                with self.assertRaises(c.AuthError):
+                    await client._access_token()
+            self.assertEqual(login.call_count, 1)
+
+    async def test_network_failure_does_not_trigger_password_login(self):
+        client = c.AtombergCloud(None, {**self.tokens, "remember_password": True, "password": "saved"})
+        user = Mock(); user.check_token.side_effect = c.BotoCoreError()
+        with patch.object(c, "Cognito", return_value=user), patch.object(c, "sign_in") as login:
+            with self.assertRaises(c.CloudError) as error:
+                await client._access_token()
+            self.assertNotIsInstance(error.exception, c.AuthError)
+            login.assert_not_called()
 
 
 if __name__ == '__main__':

@@ -5,6 +5,7 @@ from urllib.parse import quote
 
 import aiohttp
 from pycognito import Cognito
+from botocore.exceptions import BotoCoreError, ClientError
 
 from .const import FAN_SERIES
 from .protocol import encode_command
@@ -24,12 +25,14 @@ class AuthError(CloudError):
 
 
 def sign_in(username, password):
-    """Run in an executor. Never persist the password."""
+    """Run in an executor. Return tokens without the password."""
     try:
         user = Cognito(POOL, CLIENT, username=username)
         user.authenticate(password)
         return {"username": user.username, "access_token": user.access_token,
                 "refresh_token": user.refresh_token, "id_token": user.id_token}
+    except BotoCoreError:
+        raise CloudError("Could not connect to Atomberg sign-in") from None
     except Exception:
         raise AuthError("Atomberg sign-in failed; check credentials or complete account verification in the app") from None
 
@@ -80,7 +83,10 @@ def websocket_supported(version):
 class AtombergCloud:
     def __init__(self, session, credentials, on_tokens=None):
         self.session = session
-        self.credentials = dict(credentials)
+        self.credentials = {key: credentials[key] for key in
+                            ("username", "access_token", "refresh_token", "id_token") if key in credentials}
+        self.password = credentials.get("password") if credentials.get("remember_password", False) else None
+        self._password_attempted = False
         self.on_tokens = on_tokens
         self.devices = {}
         self._firebase_token = None
@@ -114,8 +120,24 @@ class AtombergCloud:
                         "refresh_token": user.refresh_token, "id_token": user.id_token}
             try:
                 updated = await asyncio.to_thread(refresh)
-            except Exception:
-                raise AuthError("Atomberg session expired; sign in again") from None
+            except BotoCoreError:
+                raise CloudError("Could not renew Atomberg session; try again later") from None
+            except Exception as err:
+                if isinstance(err, ClientError) and err.response.get("Error", {}).get("Code") not in {
+                    "NotAuthorizedException", "UserNotFoundException"}:
+                    raise CloudError("Could not renew Atomberg session; try again later") from None
+                if not self.password or self._password_attempted:
+                    raise AuthError("Atomberg session expired; sign in again") from None
+                self._password_attempted = True
+                try:
+                    updated = await asyncio.to_thread(sign_in, self.credentials["username"], self.password)
+                except CloudError as login_error:
+                    if not isinstance(login_error, AuthError):
+                        self._password_attempted = False
+                    raise
+                if updated["username"] != self.credentials["username"]:
+                    raise AuthError("Atomberg sign-in returned a different account")
+            self._password_attempted = False
             if updated != self.credentials:
                 self.credentials = updated
                 if self.on_tokens:

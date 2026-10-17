@@ -3,10 +3,11 @@
     "step": {
       "user": {
         "title": "Sign in to Atomberg",
-        "description": "Use your Atomberg Home email and password. Control uses the app's cloud connection only. This version supports fans with firmware newer than 1.0.24. Social sign-in and MFA challenges are not supported. Passwords are used only during sign-in; session tokens are saved.",
+        "description": "Use your Atomberg Home email and password. Session tokens reconnect automatically after restarts. Enable Remember password to sign in again if token renewal fails. The saved password is stored in Home Assistant configuration and backups; leave disabled to save tokens only. Social login and MFA are not supported.",
         "data": {
           "username": "Email",
-          "password": "Password"
+          "password": "Password",
+          "remember_password": "Remember password"
         }
       }
     },
@@ -19,6 +20,23 @@
       "already_configured": "This account is already configured.",
       "reauth_successful": "Signed in again successfully.",
       "wrong_account": "Sign in with the account already configured for this integration."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Automatic sign-in",
+        "description": "Session tokens already survive restarts. Remember password allows automatic sign-in if token renewal fails. Your password is stored in Home Assistant configuration and backups, without additional encryption by this integration. Leave the password blank to keep an existing saved password. Turning this off removes it from the current configuration.",
+        "data": {
+          "remember_password": "Remember password",
+          "password": "Password"
+        }
+      }
+    },
+    "error": {
+      "password_required": "Enter your password to enable automatic sign-in.",
+      "invalid_auth": "Sign-in failed. Check your password.",
+      "cannot_connect": "Could not connect to Atomberg."
     }
   }
 }

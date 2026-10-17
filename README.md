@@ -34,7 +34,7 @@ your account's supported fans and read their state.
 
 - **Cloud only:** uses the mobile app protocol, with no LAN discovery or local fallback.
 - **Account discovery:** finds supported fans associated with your Atomberg account.
-- **Session renewal:** saves renewable session tokens instead of your password.
+- **Session renewal:** saves renewable session tokens, with optional password-based sign-in recovery.
 - **Reported state:** updates entities from cloud reads rather than assuming a command succeeded.
 
 ## Installation
@@ -104,10 +104,25 @@ The series filter is not a claim of physical validation for every model.
 | Check | Result |
 | :--- | :--- |
 | **Account discovery and state reads** | Verified against three fans: one online R1 on firmware 1.4.0 and two offline fans on 2.2.0 |
-| **Cloud contract tests** | 13 tests pass with synthetic data and mocked transports |
+| **Cloud contract tests** | 18 tests pass with synthetic data and mocked transports |
 | **HACS and hassfest** | Passed for release 0.2.1; current status is shown in the badge above |
 | **Physical command control** | Passed — confirmed by the user in their Home Assistant setup |
 | **Running Home Assistant instance** | Passed — confirmed by the user in their Home Assistant setup |
+
+## Automatic sign-in after restarts
+
+Session tokens are saved automatically, so normal Home Assistant restarts do not
+require another login. To allow automatic sign-in when token renewal fails:
+
+1. Update to **0.2.2** through HACS and restart Home Assistant.
+2. Open **Settings → Devices & services → Atomberg Home → Configure**.
+3. Enable **Remember password**, enter your Atomberg password, and save.
+
+The option is also available during initial setup. It defaults to off. When enabled,
+the password is stored in Home Assistant configuration and backups without additional
+encryption by this integration. Turning it off removes the password from the current
+configuration; existing backups may still contain it. Rejected credentials require
+manual sign-in rather than repeated automatic attempts.
 
 ## Everyday use
 
